@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<style>
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  img.movie-poster {
+    max-width: 40%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  h2 {
+    margin-top: 10px;
+    color: #333;
+  }
+
+  p {
+    margin-top: 8px;
+    color: #555;
+  }
+
+  button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+<body>
+  <h1>Welcome To Final Project</h1>
+
+  <h1>Top 10 Movies on IMDB</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Poster</th>
+        <th>Title</th>
+        <th>IMDb Rating</th>
+        <!-- Add other relevant table headers -->
+      </tr>
+    </thead>
+    <tbody>
+      {{#each topMovies}}
+        <tr>
+          <td><img src="{{poster}}" alt="{{title}} Poster" class="movie-poster"></td>
+          <td><h2>{{title}}</h2></td>
+          <td><p>IMDb Rating: {{imdb.rating}}</p></td>
+          <!-- Add other relevant table data -->
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <!-- Login button with a link to the login page -->
+  <button onclick="location.href='/login'">Login</button>
+</body>
+</html>
